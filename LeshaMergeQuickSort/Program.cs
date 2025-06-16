@@ -25,4 +25,5 @@ class Program
             Console.Write($"{i} ");
         }
     }
+    
 }
