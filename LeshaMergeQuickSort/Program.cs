@@ -1,4 +1,6 @@
-﻿namespace LeshaMergeQuickSort;
+﻿using System.Diagnostics;
+
+namespace LeshaMergeQuickSort;
 
 class Program
 {
@@ -22,8 +24,24 @@ class Program
         Console.WriteLine();
         var sortedArr2 = MySorts2.LeshaBubbleSort(testArray);
         Print(sortedArr2);
+        Console.WriteLine();
 
 
+        Stopwatch stopwatch = new Stopwatch();
+        List<double> ourAlgorithm = new List<double>();
+        List<double> standardAlgorithm = new List<double>();
+        for (int i = 0; i < 1000; i++)
+        {
+            var (time1, time2) = AlgorithmsTester.TestAlgorithms(stopwatch);
+            ourAlgorithm.Add(time1);
+            standardAlgorithm.Add(time2);
+            
+        }
+
+        Console.WriteLine("done");
+        Console.WriteLine($"Our algorithm:{ourAlgorithm.Average():F5}");
+        Console.WriteLine($"Standard algorithm:{standardAlgorithm.Average():F5}");
+        
         
     }
 

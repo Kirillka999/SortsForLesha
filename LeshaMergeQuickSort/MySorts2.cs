@@ -78,7 +78,7 @@ public class MySorts2
             }
             if (!exchangeHappened)
             {
-                Console.WriteLine(iterator + " exchanges happened in bubble sort");
+                //Console.WriteLine($"\n{iterator} exchanges happened in bubble sort");
                 break;
             }
             
