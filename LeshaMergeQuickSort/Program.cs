@@ -21,28 +21,31 @@ class Program
         Console.WriteLine();
         var sortedArr = MySorts2.LeshaStalinInsertionSort(testArray);
         Print(sortedArr);
-        Console.WriteLine();
-        var sortedArr2 = MySorts2.LeshaBubbleSort(testArray);
-        Print(sortedArr2);
-        Console.WriteLine();
-
-
-        Stopwatch stopwatch = new Stopwatch();
-        List<double> ourAlgorithm = new List<double>();
-        List<double> standardAlgorithm = new List<double>();
-        for (int i = 0; i < 1000; i++)
-        {
-            var (time1, time2) = AlgorithmsTester.TestAlgorithms(stopwatch);
-            ourAlgorithm.Add(time1);
-            standardAlgorithm.Add(time2);
-            
-        }
-
-        Console.WriteLine("done");
-        Console.WriteLine($"Our algorithm:{ourAlgorithm.Average():F5}");
-        Console.WriteLine($"Standard algorithm:{standardAlgorithm.Average():F5}");
         
-        
+        //Print(sortedArr);
+        //Console.WriteLine();
+        // var sortedArr2 = MySorts2.LeshaBubbleSort(testArray);
+        // Print(sortedArr2);
+        // Console.WriteLine();
+
+
+        // Stopwatch stopwatch = new Stopwatch();
+        // List<double> ourAlgorithm = new List<double>();
+        // List<double> bubbleSort = new List<double>();
+        // List<double> insertionSort = new List<double>();
+        // for (int i = 0; i < 1000; i++)
+        // {
+        //     var (time1, time2) = AlgorithmsTester.TestAlgorithms(stopwatch);
+        //     ourAlgorithm.Add(time1);
+        //     bubbleSort.Add(time2);
+        // }
+        //
+        // Console.WriteLine("done");
+        // Console.WriteLine($"Our algorithm:{ourAlgorithm.Average():F5}");
+        // Console.WriteLine($"Bubble sort algorithm:{bubbleSort.Average():F5}");
+
+
+
     }
 
     static void Print(List<int> arrayToPrint)

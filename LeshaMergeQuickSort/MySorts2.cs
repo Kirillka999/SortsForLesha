@@ -9,49 +9,44 @@ public class MySorts2
     static public List<int> LeshaStalinInsertionSort(List<int> listToSort)
     {
         List<int> killedList = new List<int>();
-        List<int> emptyIndexes = new List<int>();
-        
+        List<int> pardonedList = new List<int>();
+         
         int lastAccepted = listToSort[0];
+        pardonedList.Add(lastAccepted);
         
         for (var i = 1; i < listToSort.Count; i++)
         {
             if (listToSort[i] < lastAccepted)
             {
                 killedList.Add(listToSort[i]);
-                emptyIndexes.Add(i);
             }
             else
             {
                 lastAccepted = listToSort[i];
+                pardonedList.Add(lastAccepted);
             }
         }
 
-        var sortedList = LeshaInsertionSort(killedList);
+        var sortedList = LeshaModifiedInsertionSort(pardonedList, killedList);
         
-        for (var i = 0; i < emptyIndexes.Count; i++)
-        {
-            listToSort[emptyIndexes[i]] = sortedList[i];
-        }
-        
-
-        return listToSort;
+        return sortedList;
     }
     
     
-    static public List<int> LeshaInsertionSort(List<int> listToSort)
+    static public List<int> LeshaModifiedInsertionSort(List<int> listToSort, List<int> killedList)
     {
-        for (var i = 1; i < listToSort.Count; i++)
+        for (var i = 0; i < killedList.Count; i++)
         {
-            int key = listToSort[i];
-            int index = i;
-            while (index > 0 && listToSort[index - 1] > key)
+            int index = listToSort.Count - 1;
+            listToSort.Add(0);
+
+            while (index >= 0 && listToSort[index] > killedList[i])
             {
-                listToSort[index] = listToSort[index - 1];
-                //listToSort[index - 1] = key;
+                listToSort[index + 1] = listToSort[index];
                 index--;
             }
 
-            listToSort[index] = key;
+            listToSort[index + 1] = killedList[i];
         }
 
         return listToSort;

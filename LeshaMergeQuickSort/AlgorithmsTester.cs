@@ -32,6 +32,7 @@ public class AlgorithmsTester
         var time2 = stopwatch.Elapsed.TotalMilliseconds;
         
         
+        
         return (time1, time2);
     }
 }
